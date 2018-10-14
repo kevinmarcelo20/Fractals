@@ -21,7 +21,7 @@ public class FractalCircle extends Application{
 	private static Ellipse ellipse;
 	private static Line line;
 	
-	static void main(String[] args) {
+	public static void main(String[] args) {
 		Application.launch(args);
 	}
 	
@@ -29,11 +29,11 @@ public class FractalCircle extends Application{
 	public void start(Stage stage) {
 		canvas = new Canvas(600,600);
 		root.getChildren().add(canvas);
-		Scene scene = new Scene(root,Color.BLACK);
+		Scene scene = new Scene(root,Color.WHITE);
 		stage.setScene(scene);
 		
-//		drawCircle(canvas.getWidth()/2, canvas.getHeight()/2, canvas.getWidth()/2, 1);
-		cantorFractal(10,50,canvas.getWidth()-20);
+		drawCircle(canvas.getWidth()/2, canvas.getHeight()/2, canvas.getWidth()/2, 1);
+//		cantorFractal(10,50,canvas.getWidth()-20);
 		
 		stage.show();
 	}
@@ -79,7 +79,7 @@ public class FractalCircle extends Application{
 		if(radius > 8) {
 			//		    drawCircle(d, e, radius);
 			//AS PROFESSOR STONEDAHL ABOUT THE VITALITY OF THE 0.5F
-		    radius *= 0.95;
+		    radius *= 0.75;
 		    
 		    drawCircle(x - radius/2, y, radius/2, level + 1);
 		    drawCircle(x + radius/2, y, radius/2, level+ 1);
